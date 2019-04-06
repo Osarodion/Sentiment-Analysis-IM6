@@ -57,16 +57,19 @@ class StartPage(tk.Frame):
         trainBtn = tk.Button(self, text="Training", width=13)
         trainBtn.grid(row=0, column=0, padx=40, pady=15)
         trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        trainBtn.bind("<Motion>", train_event)
 
         # testing button
         testBtn = tk.Button(self, text="Testing", width=13)
         testBtn.grid(row=1, column=0, padx=40, pady=24)
         testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        testBtn.bind("<Motion>", test_event)
 
         # evaluate text button
         evalTextBtn = tk.Button(self, text="Evaluate Text", width=13)
         evalTextBtn.grid(row=2, column=0, pady=15)
         evalTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        evalTextBtn.bind("<Motion>", eval_text_event)
 
         # ************************** button to the right ********************************
 
@@ -74,11 +77,13 @@ class StartPage(tk.Frame):
         guiEvalBtn = tk.Button(self, text="GUI Evaluation", width=13)
         guiEvalBtn.grid(row=0, column=1, padx=40)
         guiEvalBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+        guiEvalBtn.bind("<Motion>", gui_eval_event)
 
         # more information evaluation button
         moreInfoBtn = tk.Button(self, text="Information", width=13)
         moreInfoBtn.grid(row=1, column=1, padx=40)
         moreInfoBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+        moreInfoBtn.bind("<Motion>", info_event)
 
         # ****************** Close window through exit button *****************
 
@@ -95,6 +100,7 @@ class StartPage(tk.Frame):
         exitBtn = tk.Button(self, text="Exit", width=13, command=exitBtnclose)
         exitBtn.grid(row=2, column=1, padx=40, pady=24)
         exitBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), fg='red')
+        exitBtn.bind("<Motion>", exit_event)
 
         # ************************* status bar *****************************
         status_bar_frame = tk.Frame(self, bd=1, relief=tk.SUNKEN)
