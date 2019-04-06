@@ -142,6 +142,24 @@ def mainframe_event(event): status_bar['text'] = 'Click a button to continue'
 
 
 # ************************ Read files from tweettext and tweetvalues file ****************
+def train():
+    global textFile, valueFile
+    if valuefile and textfile is not None:
+        reset = askokcancel("Reset training data", "Are you sure?")
+        if reset is True:
+            try:
+                print("Loading input values into WordMap...\n")
+                with open(textfile, 'r') as textFile:
+                    with open(valuefile, 'r') as valueFile:
+                        WordMap.buildWordMap(reset, textFile, valueFile)
+                        progressBar()
+            except IOError:
+                print("File not found. Returning to main menu...\n")
+        else:
+            return False
+
+    else:
+        showerror('Error!', 'text file or value file not selected')
 
 # ***************************** End of Read files from tweettext and tweetvalues file ****************
 
@@ -160,7 +178,7 @@ class Training(tk.Frame):
         global tweetTextLabel, tweetValuesLabel
 
         # ******************** tweet text button and entry *******************
-        tweetTextBtn = tk.Button(self, text="Tweet text", width=12)
+        tweetTextBtn = tk.Button(self, text="Tweet text", width=12, command=tweetText)
         tweetTextBtn.grid(row=0, column=0, padx=10, pady=20)
         tweetTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
 
@@ -170,7 +188,7 @@ class Training(tk.Frame):
         # ********************End of tweet Text button and entry *******************
 
         # ******************** tweet values button and entry *******************
-        tweetValuesBtn = tk.Button(self, text="Tweet values", width=12)
+        tweetValuesBtn = tk.Button(self, text="Tweet values", width=12, command=tweetValues)
         tweetValuesBtn.grid(row=3, column=0, pady=25)
         tweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
 
@@ -180,7 +198,7 @@ class Training(tk.Frame):
         # ********************************End of tweet values button and entry *************************
 
         # training button
-        trainBtn = tk.Button(self, text="Train", width=13)
+        trainBtn = tk.Button(self, text="Train", width=13, command=train)
         trainBtn.grid(row=4, column=0)
         trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
 
