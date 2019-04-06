@@ -1,0 +1,27 @@
+Predicted   Empty  Enthusiasm  Fun  Happiness  Hate  Love  Neutral  Sadness  \
+Actual                                                                        
+Empty           0           0    0          0     0     0        0        0   
+Enthusiasm      0           0    0          0     0     0        2        0   
+Fun             0           0    0          0     0     0        1        0   
+Happiness       0           0    0          2     0     0        0        0   
+Hate            0           0    0          0     0     0        0        0   
+Love            0           0    0          0     0     1        1        0   
+Neutral         0           0    0          0     0     1       12        3   
+Sadness         0           0    0          0     0     2        1       13   
+Surprise        0           0    0          0     0     0        0        0   
+Worry           0           0    0          0     0     2        6        4   
+__all__         0           0    0          2     0     6       23       20   
+
+Predicted   Surprise  Worry  __all__  
+Actual                                
+Empty              0      3        3  
+Enthusiasm         0      0        2  
+Fun                0      1        2  
+Happiness          0      1        3  
+Hate               0      2        2  
+Love               0      0        2  
+Neutral            0     11       27  
+Sadness            0     11       27  
+Surprise           0      1        1  
+Worry              0     17       29  
+__all__            0     47       98  

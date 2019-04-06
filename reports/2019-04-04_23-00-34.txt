@@ -1,0 +1,80 @@
+1956967341,@tiffanylue i know  i was listenin to bad habit earlier and i started freakin at his part =[,,
+
+Filtered: ['know', 'bad', 'habit', 'earlier', 'start', 'part']
+Words not found:[]
+Emotion probabilities: -19.55,-19.00,-20.50,-18.92,-18.49,-18.82,-20.21,-19.83,-19.73,-19.97,-21.18,-19.21,-21.45
+Predicted emotion: Worry
+Correct emotion: Empty
+----------------------------------------------------------------------
+1956967666,Layin n bed with a headache  ughhhh...waitin on your call...,,
+
+Filtered: ['n', 'bed', 'headach', 'call']
+Words not found:[]
+Emotion probabilities: -12.83,-11.54,-13.29,-11.74,-11.46,-12.64,-12.77,-13.12,-12.55,-12.73,-14.10,-12.76,-14.72
+Predicted emotion: Worry
+Correct emotion: Sadness
+----------------------------------------------------------------------
+1956967696,Funeral ceremony...gloomy friday...,,
+
+Filtered: ['funer', 'ceremoni', 'gloomi']
+Words not found:[]
+Emotion probabilities: -12.09,-11.35,-12.10,-12.39,-11.90,-12.69,-12.84,-12.28,-11.67,-12.54,-11.78,-12.19,-11.72
+Predicted emotion: Sadness
+Correct emotion: Sadness
+----------------------------------------------------------------------
+1956967789,wants to hang out with friends SOON!,,
+
+Filtered: ['want', 'hang', 'friend', 'soon']
+Words not found:[]
+Emotion probabilities: -13.21,-11.13,-11.95,-10.84,-10.91,-12.56,-11.19,-11.60,-12.08,-11.34,-14.10,-12.76,-14.07
+Predicted emotion: Neutral
+Correct emotion: Enthusiasm
+----------------------------------------------------------------------
+1956968416,@dannycastillo We want to trade with someone who has Houston tickets, but no one will.,
+
+Filtered: ['want', 'trade', 'someon', 'ticket', 'one']
+Words not found:[]
+Emotion probabilities: -16.47,-14.81,-15.86,-14.57,-14.83,-15.15,-15.86,-15.57,-14.99,-15.60,-17.25,-15.53,-18.27
+Predicted emotion: Neutral
+Correct emotion: Neutral
+----------------------------------------------------------------------
+1956968477,Re-pinging @ghostridah14: why didn't you go to prom? BC my bf didn't like my friends,,
+
+Filtered: ['go', 'prom', 'bf', 'like', 'friend']
+Words not found:[]
+Emotion probabilities: -15.90,-14.19,-15.98,-14.19,-14.07,-15.48,-14.16,-14.34,-14.90,-14.24,-16.82,-15.22,-17.49
+Predicted emotion: Worry
+Correct emotion: Worry
+----------------------------------------------------------------------
+1956968487,I should be sleep, but im not! thinking about an old friend who I want. but he's married now. damn, &amp; he wants me 2! scandalous!
+
+Filtered: ['sleep', 'think', 'old', 'friend', 'want', 'marri', 'damn', 'amp', 'scandal']
+Words not found:[]
+Emotion probabilities: -29.20,-26.42,-29.16,-26.49,-26.36,-27.50,-26.93,-27.34,-27.44,-27.62,-30.67,-28.22,-32.47
+Predicted emotion: Worry
+Correct emotion: Sadness
+----------------------------------------------------------------------
+1956968636,Hmmm. http://www.djhero.com/ is down,,
+
+Filtered: ['http']
+Words not found:[]
+Emotion probabilities: -2.42,-2.43,-2.60,-1.93,-2.32,-2.28,-2.11,-2.27,-2.67,-2.16,-3.45,-2.54,-3.21
+Predicted emotion: Neutral
+Correct emotion: Worry
+----------------------------------------------------------------------
+1956969035,@charviray Charlene my love. I miss you,,
+
+Filtered: ['love', 'miss']
+Words not found:[]
+Emotion probabilities: -6.25,-4.25,-5.66,-5.10,-4.66,-5.12,-3.89,-5.20,-5.89,-4.83,-6.45,-5.50,-7.21
+Predicted emotion: Love
+Correct emotion: Sadness
+----------------------------------------------------------------------
+1956969172,@kelcouch I'm sorry  at least it's Friday?,,
+
+Filtered: ['sorri', 'least']
+Words not found:[]
+Emotion probabilities: -6.98,-5.35,-7.16,-6.22,-5.46,-6.30,-6.46,-7.08,-6.46,-6.41,-7.25,-5.88,-7.03
+Predicted emotion: Worry
+Correct emotion: Sadness
+----------------------------------------------------------------------
