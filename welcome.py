@@ -155,6 +155,20 @@ root = WelcomeWindow()
 menubar = tk.Menu(root)
 
 # ************************ Create a menu button labeled "File" that brings up a menu *******************
+filemenu = tk.Menu(menubar, tearoff=0)
+menubar.add_cascade(label='File', menu=filemenu)
+menubar.add_cascade(label='Quit', command=root.quit)
+
+# ************* Event to show on status bar ************************
+def print_event(): status_bar['text'] = 'Now Printing..........'
+
+
+def save_event(): status_bar['text'] = 'Saving files...........'
+
+
+# ******************** Creates  "File" Sub-menus ***************************
+printStatus = filemenu.add_command(label='Print', command=print_event)
+saveStatus = filemenu.add_command(label='Save', command=save_event)
 
 # ************************* End of menu ************************************************************
 
