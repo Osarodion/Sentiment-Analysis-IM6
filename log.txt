@@ -1,12 +1,13 @@
-c1dc5fd Michael Osakoh 84 seconds ago - Added functioning clear button in the training frame
-abf8f31 Michael Osakoh 88 minutes ago - Added working test frame
+80458c4 Michael Osakoh 4 seconds ago - Added activeforeground color to all buttons
+c1dc5fd Michael Osakoh 28 minutes ago - Added functioning clear button in the training frame
+abf8f31 Michael Osakoh 2 hours ago - Added working test frame
 e795acc Michael Osakoh 3 hours ago - Added more info command
 d5ec646 Michael Osakoh 3 hours ago - Added command to load the Training frame from the start frame
 b25b8f7 Michael Osakoh 3 hours ago - Added train function for Train button
 11ff906 Michael Osakoh 3 hours ago - Added Training frame
 097f8f9 Michael Osakoh 3 hours ago - Added bind for all the buttons on start frame
-94653cd Michael Osakoh 3 hours ago - Added function for Exit button
-0addc7a Michael Osakoh 3 hours ago - Add menubar
-b9fe578 Michael Osakoh 3 hours ago - Mouse movement(StartPage) for status bar
-6a08aab Michael Osakoh 3 hours ago - Added start frame
+94653cd Michael Osakoh 4 hours ago - Added function for Exit button
+0addc7a Michael Osakoh 4 hours ago - Add menubar
+b9fe578 Michael Osakoh 4 hours ago - Mouse movement(StartPage) for status bar
+6a08aab Michael Osakoh 4 hours ago - Added start frame
 80176a0 Michael Osakoh 6 hours ago - Initial commit
