@@ -98,6 +98,26 @@ class StartPage(tk.Frame):
 # ******************** End of Start Page *************************************
 
 # ***************** Mouse movement(StartPage) for status bar **********************
+def train_event(event): status_bar['text'] = 'Click to re-train the model'
+
+
+def test_event(event): status_bar['text'] = 'Run the system and test its accuracy'
+
+
+def eval_text_event(event): status_bar['text'] = "Evaluate input file that hasn't been pre-labelled"
+
+
+def gui_eval_event(event): status_bar['text'] = 'Click to get emotion from text'
+
+
+def info_event(event): status_bar['text'] = 'For more information'
+
+
+def exit_event(event): status_bar['text'] = 'Close application'
+
+
+def mainframe_event(event): status_bar['text'] = 'Click a button to continue'
+
 # ********************************** End of mouse movements *********************************
 
 # ************************************* load tweet text ************************************
