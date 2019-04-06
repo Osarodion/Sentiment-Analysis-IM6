@@ -81,8 +81,18 @@ class StartPage(tk.Frame):
         moreInfoBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
 
         # ****************** Close window through exit button *****************
+
+        def exitBtnclose():
+            answer = askokcancel("Exit application!", "Are you sure?")
+
+            if answer is True:
+                self.quit()
+                return
+            else:
+                return False
+
         # Exit button
-        exitBtn = tk.Button(self, text="Exit", width=13)
+        exitBtn = tk.Button(self, text="Exit", width=13, command=exitBtnclose)
         exitBtn.grid(row=2, column=1, padx=40, pady=24)
         exitBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), fg='red')
 
