@@ -29,7 +29,7 @@ class WelcomeWindow(tk.Tk):
         # empty list - key & values
         self.frames = {}
 
-        for F in (StartPage):
+        for F in (StartPage, Training):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -152,6 +152,44 @@ def mainframe_event(event): status_bar['text'] = 'Click a button to continue'
 
 
 # ******************************** Show training frame ****************************
+class Training(tk.Frame):
+
+    def __init__(self, parent, controller):
+        # 'parent class' is 'WelcomeWindow'
+        tk.Frame.__init__(self, parent, background='gray')
+        global tweetTextLabel, tweetValuesLabel
+
+        # ******************** tweet text button and entry *******************
+        tweetTextBtn = tk.Button(self, text="Tweet text", width=12)
+        tweetTextBtn.grid(row=0, column=0, padx=10, pady=20)
+        tweetTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+
+        tweetTextLabel = tk.Label(self, width=25)
+        tweetTextLabel.grid(row=0, column=1, ipady=5, pady=20)
+        tweetTextLabel.config(bd=2, font=("Arial ITALIC", 13))
+        # ********************End of tweet Text button and entry *******************
+
+        # ******************** tweet values button and entry *******************
+        tweetValuesBtn = tk.Button(self, text="Tweet values", width=12)
+        tweetValuesBtn.grid(row=3, column=0, pady=25)
+        tweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+
+        tweetValuesLabel = tk.Label(self, width=25)
+        tweetValuesLabel.grid(row=3, column=1, ipady=5)
+        tweetValuesLabel.config(bd=2, font=("Arial ITALIC", 13))
+        # ********************************End of tweet values button and entry *************************
+
+        # training button
+        trainBtn = tk.Button(self, text="Train", width=13)
+        trainBtn.grid(row=4, column=0)
+        trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+
+        # testing button
+        cancelBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))
+        cancelBtn.grid(row=4, column=1)
+        cancelBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+
+
 # ******************************************** End of Training Frame ***************************************************
 
 # ******************************** Show Testing frame ******************************************************************
