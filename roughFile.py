@@ -14,25 +14,28 @@ window.title("Emotion Detector | Group 6")  # Add a title
 window.resizable(False, False)  # This code helps to disable windows from resizing
 
 
-# ********************* load tweet text ***************************
+# ************************************** load tweet text for test ***************************
 def tweetText():
     global textfile
     current_path = "./data/"
     textfile = tkFileDialog.askopenfilename(title='Choose text file', initialdir=current_path, filetypes=[("CSV files", "*.csv")])
 
     tweetTextLabel.config(text=os.path.basename(textfile))
+# ************************************** load tweet text for test ***************************
 
 
-# **************** load tweet values
+
+# ****************************** load tweet values for test ***********************************
 def tweetValues():
     global valuefile
     current_path = "./data/"
     valuefile = tkFileDialog.askopenfilename(title='Choose value file', initialdir=current_path, filetypes=[("CSV files", "*.csv")])
 
     tweetValuesLabel.config(text=os.path.basename(valuefile))
+# ****************************** End of load tweet values for test ***********************************
 
 
-# ****************** Read files from tweettext and tweetvalues file
+# ***************************** Read files test ****************************************
 def test():
     global textFile, valueFile
     if valuefile and textfile is not None:
@@ -50,6 +53,8 @@ def test():
         showerror('Error!', 'text file or value file not selected')
         # print "text file or value file not selected!"
         # return
+# ***************************** Read files test ****************************************
+
 
 
 
@@ -73,9 +78,10 @@ statusFrame.grid_propagate(0)  # don't shrink
 # ******************* Progress Bar Function ******************
 def progressBar():
     showinfo('Info', "Evaluation Complete!")
+# **************************************************************
 
 
-# ******************** tweet text button and entry *******************
+# ******************** tweet text button and label *******************
 tweetTextBtn = Button(mainFrame, text="Tweet text", width=12, command=tweetText)
 tweetTextBtn.grid(row=0, column=0, padx=10, pady=20)
 tweetTextBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 12))
@@ -83,9 +89,9 @@ tweetTextBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 12))
 tweetTextLabel = Label(mainFrame, width=25)
 tweetTextLabel.grid(row=0, column=1, ipady=5, pady=20)
 tweetTextLabel.config(bd=2, font=("Arial ITALIC", 13))
-# ********************End of tweet Text button and entry *******************
+# ********************End of tweet Text button and label *******************
 
-# ******************** tweet values button and entry *******************
+# ******************** tweet values button and label *******************
 tweetValuesBtn = Button(mainFrame, text="Tweet values", width=12, command=tweetValues)
 tweetValuesBtn.grid(row=3, column=0, pady=25)
 tweetValuesBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 12))
@@ -93,15 +99,14 @@ tweetValuesBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 12))
 tweetValuesLabel = Label(mainFrame, width=25)
 tweetValuesLabel.grid(row=3, column=1, ipady=5)
 tweetValuesLabel.config(bd=2, font=("Arial ITALIC", 13))
-# ********************End of tweet values button and entry *******************
+# ********************End of tweet values button and label *******************
 
-# training button
-# trainBtn = Button(mainFrame, text="Train", width=13, command=train)
+# test button
 testBtn = Button(mainFrame, text="Test", width=13, command=test)
 testBtn.grid(row=4, column=0)
 testBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 13))
 
-# testing button
+# cancel button
 cancelBtn = Button(mainFrame, text="Cancel", width=13)
 cancelBtn.grid(row=4, column=1)
 cancelBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 13))
