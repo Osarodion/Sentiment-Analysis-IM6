@@ -62,7 +62,7 @@ class StartPage(tk.Frame):
         trainBtn.bind("<Motion>", train_event)
 
         # testing button
-        testBtn = tk.Button(self, text="Testing", width=13)
+        testBtn = tk.Button(self, text="Testing", width=13, command=lambda: controller.show_frame(Test))
         testBtn.grid(row=1, column=0, padx=40, pady=24)
         testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
         testBtn.bind("<Motion>", test_event)
@@ -152,9 +152,9 @@ def exit_event(event): status_bar['text'] = 'Close application'
 
 def mainframe_event(event): status_bar['text'] = 'Click a button to continue'
 
-# ********************************** End of mouse movements *********************************
+# **************************************************** End of mouse movements ******************************************
 
-# ************************************* load tweet text ************************************
+# *************************************************** load tweet text for training *************************************
 def tweetText():
     global textfile
     current_path = "./data/"
@@ -162,7 +162,7 @@ def tweetText():
                                             initialdir=current_path,
                                             filetypes=[("CSV files", "*.csv")])
     tweetTextLabel.config(text=os.path.basename(textfile))
-# ************************************* load tweet values *****************************
+# **************************************************** load tweet values for training **********************************
 def tweetValues():
     global valuefile
     current_path = "./data/"
@@ -171,9 +171,9 @@ def tweetValues():
                                              filetypes=[("CSV files", "*.csv")])
 
     tweetValuesLabel.config(text=os.path.basename(valuefile))
-# ************************************* End of load tweet text and value ************************************
+# ************************************* End of load tweet text and value for training **********************************
 
-# ************************ Read files from tweettext and tweetvalues file ****************
+# **************************************************** Read files for training *****************************************
 def train():
     global textFile, valueFile
     if valuefile and textfile is not None:
@@ -192,14 +192,13 @@ def train():
 
     else:
         showerror('Error!', 'text file or value file not selected')
-
-# ***************************** End of Read files from tweettext and tweetvalues file ****************
+# ********************************************* End of Read files for training *****************************************
 
 
 # **************************************************** Progress Bar Function *******************************************
 def progressBar():
     showinfo('Info', "Process completed!")
-# **********************************************************************************************************************
+# ************************************************* End of Progress Bar ************************************************
 
 
 # ***************************************** Show training frame ********************************************************
@@ -237,37 +236,45 @@ class Training(tk.Frame):
 
         # testing button
         cancelBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))
-        cancelBtn.grid(row=4, column=1)
+        cancelBtn.grid(row=5, column=0)
         cancelBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
 
 
+        # clear button
+        def clear():
+            tweetTextLabel['text'] = ""
+            tweetValuesLabel['text'] = ""
+
+        clearBtn = tk.Button(self, text="Clear", width=13, command=clear)
+        clearBtn.grid(row=4, column=1)
+        clearBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13))
+
 # ******************************************** End of Training Frame ***************************************************
 
-# ******************************** Show Testing frame ******************************************************************
-# ***************************************** Show test frame ********************************************************
 
-# ************************************** load tweet text for test ***************************
+# ********************************************* Show test frame ********************************************************
+
+#  load tweet text for test ***************************************
 def testTweetText():
     global textfile
     current_path = "./data/"
     textfile = tkFileDialog.askopenfilename(title='Choose text file', initialdir=current_path, filetypes=[("CSV files", "*.csv")])
 
-    tweetTextLabel.config(text=os.path.basename(textfile))
-# ************************************** load tweet text for test ***************************
+    testTweetTxtLabel.config(text=os.path.basename(textfile))
+# end of load tweet text for test **********************************
 
 
-
-# ****************************** load tweet values for test ***********************************
+#  load tweet values for test **************************************
 def testTweetValues():
     global valuefile
     current_path = "./data/"
     valuefile = tkFileDialog.askopenfilename(title='Choose value file', initialdir=current_path, filetypes=[("CSV files", "*.csv")])
 
-    tweetValuesLabel.config(text=os.path.basename(valuefile))
-# ****************************** End of load tweet values for test ***********************************
+    testTweetValuesLabel.config(text=os.path.basename(valuefile))
+# end of load tweet values for test ***********************************
 
 
-# ***************************** Read files test ****************************************
+#  Read files for test ************************************************
 def test():
     global textFile, valueFile
     if valuefile and textfile is not None:
@@ -285,7 +292,7 @@ def test():
         showerror('Error!', 'text file or value file not selected')
         # print "text file or value file not selected!"
         # return
-# ***************************** Read files test ****************************************
+# end of Read files for test ********************************************
 
 
 class Test(tk.Frame):
@@ -305,7 +312,7 @@ class Test(tk.Frame):
         testTweetTxtLabel.config(bd=2, font=("Arial ITALIC", 13))
         # ********************End of tweet Text button and label *******************
 
-        # ******************** tweet values button and label *******************
+        # *********************** tweet values button and label ********************
         testTweetValuesBtn = tk.Button(self, text="Tweet values", width=12, command=testTweetValues)
         testTweetValuesBtn.grid(row=3, column=0, pady=25)
         testTweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
@@ -321,47 +328,38 @@ class Test(tk.Frame):
         testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
 
         # cancel button
-        cancelBtn = tk.Button(self, text="Cancel", width=13, command=lambda: controller.show_frame(StartPage))
+        cancelBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))
         cancelBtn.grid(row=4, column=1)
         cancelBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
-# ******************************************** End of test Frame ***************************************************
-
-# ********************************************* End of Testing Frame ***************************************************
-
-# ********************************************* More Information message box *******************************************
-
-# ********************************************* End of More Information ************************************************
+# *********************************************** End of test Frame ****************************************************
 
 
-
-# running the main class
+# ********************************************* running the main class *************************************************
 root = WelcomeWindow()
 
-# *********************** Menu Bar *********************************
+# ******************************************************* Menu Bar *****************************************************
 # Insert a menu bar on the main window
 menubar = tk.Menu(root)
 
-# ************************ Create a menu button labeled "File" that brings up a menu *******************
+# ********************************* Creates a menu button labeled "File" and "Quit" ************************************
 filemenu = tk.Menu(menubar, tearoff=0)
 menubar.add_cascade(label='File', menu=filemenu)
 menubar.add_cascade(label='Quit', command=root.quit)
 
-# ************* Event to show on status bar ************************
+# *************************************** Event to show on status bar **************************************************
 def print_event(): status_bar['text'] = 'Now Printing..........'
 
 
 def save_event(): status_bar['text'] = 'Saving files...........'
 
 
-# ******************** Creates  "File" Sub-menus ***************************
+# ********************************************* Creates  "File" Sub-menus **********************************************
 printStatus = filemenu.add_command(label='Print', command=print_event)
 saveStatus = filemenu.add_command(label='Save', command=save_event)
 
-# ************************* End of menu ************************************************************
+# ************************************************ End of menu *********************************************************
 
-
-
-# ********************* Centralise the window ****************************
+# ************************************************** Centralise the window *********************************************
 window_height = 259
 window_width = 445
 # specifies width and height of window1

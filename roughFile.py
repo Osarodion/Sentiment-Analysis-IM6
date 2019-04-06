@@ -83,7 +83,7 @@ def progressBar():
 
 # ******************** tweet text button and label *******************
 tweetTextBtn = Button(mainFrame, text="Tweet text", width=12, command=tweetText)
-tweetTextBtn.grid(row=0, column=0, padx=10, pady=20)
+tweetTextBtn.grid(row=0, column=0, pady=20)
 tweetTextBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 12))
 
 tweetTextLabel = Label(mainFrame, width=25)
@@ -93,23 +93,32 @@ tweetTextLabel.config(bd=2, font=("Arial ITALIC", 13))
 
 # ******************** tweet values button and label *******************
 tweetValuesBtn = Button(mainFrame, text="Tweet values", width=12, command=tweetValues)
-tweetValuesBtn.grid(row=3, column=0, pady=25)
+tweetValuesBtn.grid(row=2, column=0, pady=25)
 tweetValuesBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 12))
 
 tweetValuesLabel = Label(mainFrame, width=25)
-tweetValuesLabel.grid(row=3, column=1, ipady=5)
+tweetValuesLabel.grid(row=2, column=1, ipady=5)
 tweetValuesLabel.config(bd=2, font=("Arial ITALIC", 13))
 # ********************End of tweet values button and label *******************
 
 # test button
-testBtn = Button(mainFrame, text="Test", width=13, command=test)
-testBtn.grid(row=4, column=0)
+testBtn = Button(mainFrame, text="Test", command=test)
+testBtn.grid(row=3, column=0)
 testBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 13))
 
 # cancel button
-cancelBtn = Button(mainFrame, text="Cancel", width=13)
-cancelBtn.grid(row=4, column=1)
+cancelBtn = Button(mainFrame, text="Cancel")
+cancelBtn.grid(row=3, column=1)
 cancelBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 13))
+
+# clear button
+def clear():
+    tweetTextLabel['text'] = ""
+    tweetValuesLabel['text'] = ""
+
+clearBtn = Button(mainFrame, text="Clear", command=clear)
+clearBtn.grid(row=3, column=2)
+clearBtn.config(bd=3, relief=RAISED, font=("Arial Bold", 13))
 
 
 # ******************** Centralise Window **************************
