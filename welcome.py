@@ -237,7 +237,7 @@ class Training(tk.Frame):
         # testing button
         cancelBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))
         cancelBtn.grid(row=5, column=0)
-        cancelBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        cancelBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
 
 
         # clear button for training frame
@@ -247,7 +247,7 @@ class Training(tk.Frame):
 
         clearTrainBtn = tk.Button(self, text="Clear", width=13, command=clearTraining)
         clearTrainBtn.grid(row=4, column=1)
-        clearTrainBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13))
+        clearTrainBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
 
 # ******************************************** End of Training Frame ***************************************************
 
@@ -330,7 +330,7 @@ class Test(tk.Frame):
         # back button
         backBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))
         backBtn.grid(row=5, column=1)
-        backBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        backBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
 
         # clear button for test frame
         def clearTest():
@@ -339,7 +339,7 @@ class Test(tk.Frame):
 
         clearTestBtn = tk.Button(self, text="Clear", width=13, command=clearTest)
         clearTestBtn.grid(row=4, column=1)
-        clearTestBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13))
+        clearTestBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
 
 # *********************************************** End of test Frame ****************************************************
 
