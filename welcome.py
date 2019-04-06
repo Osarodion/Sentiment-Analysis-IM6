@@ -58,19 +58,19 @@ class StartPage(tk.Frame):
         # training button
         trainBtn = tk.Button(self, text="Training", width=13, command=lambda: controller.show_frame(Training))
         trainBtn.grid(row=0, column=0, padx=40, pady=15)
-        trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
         trainBtn.bind("<Motion>", train_event)
 
         # testing button
         testBtn = tk.Button(self, text="Testing", width=13, command=lambda: controller.show_frame(Test))
         testBtn.grid(row=1, column=0, padx=40, pady=24)
-        testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
         testBtn.bind("<Motion>", test_event)
 
         # evaluate text button
         evalTextBtn = tk.Button(self, text="Evaluate Text", width=13)
         evalTextBtn.grid(row=2, column=0, pady=15)
-        evalTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        evalTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
         evalTextBtn.bind("<Motion>", eval_text_event)
 
         # ************************** button to the right ********************************
@@ -78,7 +78,7 @@ class StartPage(tk.Frame):
         # gui evaluation button
         guiEvalBtn = tk.Button(self, text="GUI Evaluation", width=13)
         guiEvalBtn.grid(row=0, column=1, padx=40)
-        guiEvalBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+        guiEvalBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
         guiEvalBtn.bind("<Motion>", gui_eval_event)
 
         # more information evaluation button and function
@@ -100,7 +100,7 @@ class StartPage(tk.Frame):
 
         moreInfoBtn = tk.Button(self, text="Information", width=13, command=moreInfo)
         moreInfoBtn.grid(row=1, column=1, padx=40)
-        moreInfoBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+        moreInfoBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
         moreInfoBtn.bind("<Motion>", info_event)
 
         # ****************** Close window through exit button *****************
@@ -212,7 +212,7 @@ class Training(tk.Frame):
         # ************************** tweet text button and entry *******************
         tweetTextBtn = tk.Button(self, text="Tweet text", width=12, command=tweetText)
         tweetTextBtn.grid(row=0, column=0, padx=10, pady=20)
-        tweetTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+        tweetTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
 
         tweetTextLabel = tk.Label(self, width=25)
         tweetTextLabel.grid(row=0, column=1, ipady=5, pady=20)
@@ -222,7 +222,7 @@ class Training(tk.Frame):
         # ******************** tweet values button and entry *******************
         tweetValuesBtn = tk.Button(self, text="Tweet values", width=12, command=tweetValues)
         tweetValuesBtn.grid(row=3, column=0, pady=25)
-        tweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+        tweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
 
         tweetValuesLabel = tk.Label(self, width=25)
         tweetValuesLabel.grid(row=3, column=1, ipady=5)
@@ -232,7 +232,7 @@ class Training(tk.Frame):
         # training button
         trainBtn = tk.Button(self, text="Train", width=13, command=train)
         trainBtn.grid(row=4, column=0)
-        trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
 
         # testing button
         cancelBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))
@@ -305,7 +305,7 @@ class Test(tk.Frame):
         # ************************** tweet text button and entry *******************
         testTweetTxtBtn = tk.Button(self, text="Tweet text", width=12, command=testTweetText)
         testTweetTxtBtn.grid(row=0, column=0, padx=10, pady=20)
-        testTweetTxtBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+        testTweetTxtBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
 
         testTweetTxtLabel = tk.Label(self, width=25)
         testTweetTxtLabel.grid(row=0, column=1, ipady=5, pady=20)
@@ -315,7 +315,7 @@ class Test(tk.Frame):
         # *********************** tweet values button and label ********************
         testTweetValuesBtn = tk.Button(self, text="Tweet values", width=12, command=testTweetValues)
         testTweetValuesBtn.grid(row=3, column=0, pady=25)
-        testTweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
+        testTweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
 
         testTweetValuesLabel = tk.Label(self, width=25)
         testTweetValuesLabel.grid(row=3, column=1, ipady=5)
@@ -325,7 +325,7 @@ class Test(tk.Frame):
         # test button
         testBtn = tk.Button(self, text="Test", width=13, command=test)
         testBtn.grid(row=4, column=0)
-        testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
+        testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
 
         # cancel button
         cancelBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))

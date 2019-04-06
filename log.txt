@@ -1,65 +1,12 @@
-commit abf8f3136b03610db4f7efaad0a67e94ec7ed9a3
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 20:07:44 2019 +0100
-
-    Added working test frame
-
-commit e795accc68c45253952c042b47da9f93115f20c8
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:45:17 2019 +0100
-
-    Added more info command
-
-commit d5ec64607c1c302151370d0ca5a38a6f47a3eb4b
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:41:52 2019 +0100
-
-    Added command to load the Training frame from the start frame
-
-commit b25b8f7574146535591615aa7314a9fbda888ff5
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:38:02 2019 +0100
-
-    Added train function for Train button
-
-commit 11ff906c837f9d34d89ccb44702b69dfb6517b72
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:35:42 2019 +0100
-
-    Added Training frame
-
-commit 097f8f9542b29b93aa0bb3b72006d8528593bb82
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:33:42 2019 +0100
-
-    Added bind for all the buttons on start frame
-
-commit 94653cd7feca3667eaf4ca5cf6c150017a2fd53c
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:31:18 2019 +0100
-
-    Added function for Exit button
-
-commit 0addc7a01869633be19561063f8f6e8838072e8b
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:27:40 2019 +0100
-
-    Add menubar
-
-commit b9fe578689d2ba9de5c3e434e6d02c0827627e68
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:26:23 2019 +0100
-
-    Mouse movement(StartPage) for status bar
-
-commit 6a08aabd5490c49b954e1ee5f4e2a8436614cf14
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 18:22:42 2019 +0100
-
-    Added start frame
-
-commit 80176a05ca54c19c401cdcdc3599b7c77ea2883a
-Author: Michael Osakoh <macmive@gmail.com>
-Date:   Sat Apr 6 15:41:14 2019 +0100
-
-    Initial commit
+c1dc5fd Michael Osakoh 84 seconds ago - Added functioning clear button in the training frame
+abf8f31 Michael Osakoh 88 minutes ago - Added working test frame
+e795acc Michael Osakoh 3 hours ago - Added more info command
+d5ec646 Michael Osakoh 3 hours ago - Added command to load the Training frame from the start frame
+b25b8f7 Michael Osakoh 3 hours ago - Added train function for Train button
+11ff906 Michael Osakoh 3 hours ago - Added Training frame
+097f8f9 Michael Osakoh 3 hours ago - Added bind for all the buttons on start frame
+94653cd Michael Osakoh 3 hours ago - Added function for Exit button
+0addc7a Michael Osakoh 3 hours ago - Add menubar
+b9fe578 Michael Osakoh 3 hours ago - Mouse movement(StartPage) for status bar
+6a08aab Michael Osakoh 3 hours ago - Added start frame
+80176a0 Michael Osakoh 6 hours ago - Initial commit
