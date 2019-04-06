@@ -54,7 +54,7 @@ class StartPage(tk.Frame):
         tk.Frame.__init__(self, parent, background='gray')
         global status_bar
         # training button
-        trainBtn = tk.Button(self, text="Training", width=13)
+        trainBtn = tk.Button(self, text="Training", width=13, command = lambda: controller.show_frame(Training))
         trainBtn.grid(row=0, column=0, padx=40, pady=15)
         trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
         trainBtn.bind("<Motion>", train_event)
@@ -137,9 +137,23 @@ def mainframe_event(event): status_bar['text'] = 'Click a button to continue'
 # ********************************** End of mouse movements *********************************
 
 # ************************************* load tweet text ************************************
+def tweetText():
+    global textfile
+    current_path = "./data/"
+    textfile = tkFileDialog.askopenfilename(title='Choose text file',
+                                            initialdir=current_path,
+                                            filetypes=[("CSV files", "*.csv")])
+    tweetTextLabel.config(text=os.path.basename(textfile))
+# ************************************* load tweet values *****************************
+def tweetValues():
+    global valuefile
+    current_path = "./data/"
+    valuefile = tkFileDialog.askopenfilename(title='Choose value file',
+                                             initialdir=current_path,
+                                             filetypes=[("CSV files", "*.csv")])
 
+    tweetValuesLabel.config(text=os.path.basename(valuefile))
 # ************************************* End of load tweet text and value ************************************
-
 
 # ************************ Read files from tweettext and tweetvalues file ****************
 def train():
@@ -165,7 +179,8 @@ def train():
 
 
 # *************************** Progress Bar Function ********************************
-
+def progressBar():
+    showinfo('Info', "Process completed!")
 # *******************************************************************************************
 
 
