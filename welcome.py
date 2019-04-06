@@ -54,7 +54,7 @@ class StartPage(tk.Frame):
         tk.Frame.__init__(self, parent, background='gray')
         global status_bar
         # training button
-        trainBtn = tk.Button(self, text="Training", width=13, command = lambda: controller.show_frame(Training))
+        trainBtn = tk.Button(self, text="Training", width=13, command=lambda: controller.show_frame(Training))
         trainBtn.grid(row=0, column=0, padx=40, pady=15)
         trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13))
         trainBtn.bind("<Motion>", train_event)
@@ -79,8 +79,24 @@ class StartPage(tk.Frame):
         guiEvalBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
         guiEvalBtn.bind("<Motion>", gui_eval_event)
 
-        # more information evaluation button
-        moreInfoBtn = tk.Button(self, text="Information", width=13)
+        # more information evaluation button and function
+        def moreInfo():
+            text = '''
+            °`°º¤ø,¸¸,ø¤º°`°º¤ø,¸,ø¤°º¤ø,¸¸,", "INFORMATION", ",¸¸,ø¤º°`°º¤ø,¸,ø¤°º¤ø,¸¸,ø¤º°º¤ø
+            EmotionDetection v1, sentiment analysis system operating off a multinomial
+            Naive Bayes classifier. There are 13 possible labels that text can be
+            labelled as, the emotions are :empty, sadness, enthusiasm, neutral, worry,
+            surprise, love, fun, hate, happiness, boredom, relief and anger.\n
+            1. Training - Generates a WordMap using a text file and emotion value file.
+            A word map is required for both testing and evaluation.\n
+            2. Testing - Run the system and test its accuracy by supplying correct 
+            emotion values. Also produces reports and confusion plot\n
+            3. Evaluate Text - Run the system without given values. Used to evaluate input
+            file that has not been pre-labelled.
+            '''
+            showinfo('More Information', text)
+
+        moreInfoBtn = tk.Button(self, text="Information", width=13, command=moreInfo)
         moreInfoBtn.grid(row=1, column=1, padx=40)
         moreInfoBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12))
         moreInfoBtn.bind("<Motion>", info_event)
