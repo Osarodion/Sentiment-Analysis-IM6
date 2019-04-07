@@ -19,6 +19,9 @@ class WelcomeWindow(tk.Tk):
 
         # Call to __init__ of super class
         tk.Tk.__init__(self, *args, **kwargs)
+
+        global container
+
         # change the default tk icon
         tk.Tk.iconbitmap(self, default="emotion.ico")
 
@@ -121,16 +124,16 @@ class StartPage(tk.Frame):
         exitBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), fg='red')
         exitBtn.bind("<Motion>", exit_event)
 
-        # ************************* status bar *****************************
-        status_bar_frame = tk.Frame(self, bd=1, relief=tk.SUNKEN)
-        status_bar_frame.grid(row=4, column=0, columnspan=6, sticky="we")
-
-        status_bar = tk.Label(status_bar_frame, text="status bar", bg="#dfdfdf", anchor=tk.W)
-
-        status_bar.pack(side=tk.BOTTOM, fill=tk.X)
-        # status_bar.config(anchor=tk.W, font=("Times", 11))
-        status_bar.config(font=("Times", 11))
-        status_bar.grid_propagate(0)
+        # # ************************* status bar *****************************
+        # status_bar_frame = tk.Frame(self, bd=1, relief=tk.SUNKEN)
+        # status_bar_frame.grid(row=4, column=0, columnspan=6, sticky="we")
+        #
+        # status_bar = tk.Label(status_bar_frame, text="status bar", bg="#dfdfdf", anchor=tk.W)
+        #
+        # status_bar.pack(side=tk.BOTTOM, fill=tk.X)
+        # # status_bar.config(anchor=tk.W, font=("Times", 11))
+        # status_bar.config(font=("Times", 11))
+        # status_bar.grid_propagate(0)
 # ******************** End of Start Page *************************************
 
 # ***************** Mouse movement(StartPage) for status bar **********************
@@ -251,7 +254,6 @@ class Training(tk.Frame):
         clearTrainBtn = tk.Button(self, text="Clear", width=13, command=clearTraining)
         clearTrainBtn.grid(row=4, column=1)
         clearTrainBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
-
 # ******************************************** End of Training Frame ***************************************************
 
 
@@ -371,6 +373,17 @@ printStatus = filemenu.add_command(label='Print', command=print_event)
 saveStatus = filemenu.add_command(label='Save', command=save_event)
 
 # ************************************************ End of menu *********************************************************
+
+# ************************* status bar *****************************
+status_bar_frame = tk.Frame(container, bd=1, relief=tk.SUNKEN)
+status_bar_frame.grid(row=4, column=0, columnspan=6, sticky="we")
+
+status_bar = tk.Label(status_bar_frame, text="status bar", bg="#dfdfdf", anchor=tk.W)
+
+status_bar.pack(side=tk.BOTTOM, fill=tk.X)
+# status_bar.config(anchor=tk.W, font=("Times", 11))
+status_bar.config(font=("Times", 11))
+status_bar.grid_propagate(0)
 
 # ************************************************** Centralise the window *********************************************
 window_height = 280
