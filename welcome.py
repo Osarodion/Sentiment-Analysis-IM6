@@ -2,6 +2,7 @@
 import Tkinter as tk
 from tkMessageBox import *
 import os
+import time
 import tkFileDialog
 from EmotionDetection import WordMap
 from EmotionDetection import EvaluateText
@@ -57,7 +58,7 @@ class StartPage(tk.Frame):
         global status_bar
         # training button
         trainBtn = tk.Button(self, text="Training", width=13, command=lambda: controller.show_frame(Training))
-        trainBtn.grid(row=0, column=0, padx=40, pady=15)
+        trainBtn.grid(row=0, column=0, padx=40, pady=25)
         trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
         trainBtn.bind("<Motion>", train_event)
 
@@ -69,7 +70,7 @@ class StartPage(tk.Frame):
 
         # evaluate text button
         evalTextBtn = tk.Button(self, text="Evaluate Text", width=13)
-        evalTextBtn.grid(row=2, column=0, pady=15)
+        evalTextBtn.grid(row=2, column=0, pady=25)
         evalTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
         evalTextBtn.bind("<Motion>", eval_text_event)
 
@@ -124,10 +125,11 @@ class StartPage(tk.Frame):
         status_bar_frame = tk.Frame(self, bd=1, relief=tk.SUNKEN)
         status_bar_frame.grid(row=4, column=0, columnspan=6, sticky="we")
 
-        status_bar = tk.Label(status_bar_frame, text="status bar", bg="#dfdfdf")
+        status_bar = tk.Label(status_bar_frame, text="status bar", bg="#dfdfdf", anchor=tk.W)
 
-        status_bar.pack(fill=tk.X, side=tk.BOTTOM)
-        status_bar.config(anchor=tk.W, font=("Times", 11))
+        status_bar.pack(side=tk.BOTTOM, fill=tk.X)
+        # status_bar.config(anchor=tk.W, font=("Times", 11))
+        status_bar.config(font=("Times", 11))
         status_bar.grid_propagate(0)
 # ******************** End of Start Page *************************************
 
@@ -198,6 +200,7 @@ def train():
 # **************************************************** Progress Bar Function *******************************************
 def progressBar():
     showinfo('Info', "Process completed!")
+    # time.sleep(3)
 # ************************************************* End of Progress Bar ************************************************
 
 
@@ -370,8 +373,8 @@ saveStatus = filemenu.add_command(label='Save', command=save_event)
 # ************************************************ End of menu *********************************************************
 
 # ************************************************** Centralise the window *********************************************
-window_height = 259
-window_width = 445
+window_height = 280
+window_width = 446
 # specifies width and height of window1
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
