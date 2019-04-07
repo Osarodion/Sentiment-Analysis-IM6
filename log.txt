@@ -1,14 +1,17 @@
-6528d03 Michael Osakoh 2 hours ago - Added functioning clear button to the test frame
-80458c4 Michael Osakoh 3 hours ago - Added activeforeground color to all buttons
-c1dc5fd Michael Osakoh 3 hours ago - Added functioning clear button in the training frame
-abf8f31 Michael Osakoh 4 hours ago - Added working test frame
-e795acc Michael Osakoh 6 hours ago - Added more info command
-d5ec646 Michael Osakoh 6 hours ago - Added command to load the Training frame from the start frame
-b25b8f7 Michael Osakoh 6 hours ago - Added train function for Train button
-11ff906 Michael Osakoh 6 hours ago - Added Training frame
-097f8f9 Michael Osakoh 6 hours ago - Added bind for all the buttons on start frame
-94653cd Michael Osakoh 6 hours ago - Added function for Exit button
-0addc7a Michael Osakoh 6 hours ago - Add menubar
-b9fe578 Michael Osakoh 6 hours ago - Mouse movement(StartPage) for status bar
-6a08aab Michael Osakoh 6 hours ago - Added start frame
-80176a0 Michael Osakoh 9 hours ago - Initial commit
+3aa20a0 Michael Osakoh 10 seconds ago - Modified status bar
+9ced24f Michael Osakoh 12 minutes ago - Increased height of root frame
+4fc0f76 Michael Osakoh 2 hours ago - Added activeforeground color to clear buttons
+6528d03 Michael Osakoh 5 hours ago - Added functioning clear button to the test frame
+80458c4 Michael Osakoh 5 hours ago - Added activeforeground color to all buttons
+c1dc5fd Michael Osakoh 6 hours ago - Added functioning clear button in the training frame
+abf8f31 Michael Osakoh 7 hours ago - Added working test frame
+e795acc Michael Osakoh 9 hours ago - Added more info command
+d5ec646 Michael Osakoh 9 hours ago - Added command to load the Training frame from the start frame
+b25b8f7 Michael Osakoh 9 hours ago - Added train function for Train button
+11ff906 Michael Osakoh 9 hours ago - Added Training frame
+097f8f9 Michael Osakoh 9 hours ago - Added bind for all the buttons on start frame
+94653cd Michael Osakoh 9 hours ago - Added function for Exit button
+0addc7a Michael Osakoh 9 hours ago - Add menubar
+b9fe578 Michael Osakoh 9 hours ago - Mouse movement(StartPage) for status bar
+6a08aab Michael Osakoh 9 hours ago - Added start frame
+80176a0 Michael Osakoh 12 hours ago - Initial commit

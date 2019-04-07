@@ -9,7 +9,7 @@ from pandas_ml import ConfusionMatrix
 from WordFilter import WordFilter
 from time import strftime
 from math import log10
-from tqdm import tqdm
+from tqdm import tqdm, tqdm_gui
 import matplotlib.pyplot as plt
 from tkMessageBox import *
 

@@ -2,20 +2,23 @@
 import Tkinter as tk
 from tkMessageBox import *
 import os
-import time
 import tkFileDialog
 from EmotionDetection import WordMap
 from EmotionDetection import EvaluateText
+from EmotionDetection.WordFilter import WordFilter
+from EmotionDetection.EvaluateText import evaluateWord
+from EmotionDetection.EvaluateText import guessEmotion
+from math import log10
 
 
 # initialise text file and value file to empty
 textfile = ""
 valuefile = ""
 
+
 class WelcomeWindow(tk.Tk):
 
     def __init__(self, *args, **kwargs):
-
 
         # Call to __init__ of super class
         tk.Tk.__init__(self, *args, **kwargs)
@@ -35,12 +38,12 @@ class WelcomeWindow(tk.Tk):
         # empty list - key & values
         self.frames = {}
 
-        for F in (StartPage, Training, Test):
+        for F in (StartPage, Training, Test, GUI):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
             # **************** Move movement showing on status bar for frame ****
-            frame.bind("<Motion>", mainframe_event)
+            frame.bind("<Motion>", self_event)
             # *******************************************************************
 
         # show current frame
@@ -61,13 +64,13 @@ class StartPage(tk.Frame):
         global status_bar
         # training button
         trainBtn = tk.Button(self, text="Training", width=13, command=lambda: controller.show_frame(Training))
-        trainBtn.grid(row=0, column=0, padx=40, pady=25)
+        trainBtn.grid(row=0, column=0, padx=68, pady=25)
         trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
         trainBtn.bind("<Motion>", train_event)
 
         # testing button
         testBtn = tk.Button(self, text="Testing", width=13, command=lambda: controller.show_frame(Test))
-        testBtn.grid(row=1, column=0, padx=40, pady=24)
+        testBtn.grid(row=1, column=0, pady=24)
         testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
         testBtn.bind("<Motion>", test_event)
 
@@ -80,7 +83,7 @@ class StartPage(tk.Frame):
         # ************************** button to the right ********************************
 
         # gui evaluation button
-        guiEvalBtn = tk.Button(self, text="GUI Evaluation", width=13)
+        guiEvalBtn = tk.Button(self, text="GUI Evaluation", width=13, command=lambda: controller.show_frame(GUI))
         guiEvalBtn.grid(row=0, column=1, padx=40)
         guiEvalBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
         guiEvalBtn.bind("<Motion>", gui_eval_event)
@@ -155,7 +158,7 @@ def info_event(event): status_bar['text'] = 'For more information'
 def exit_event(event): status_bar['text'] = 'Close application'
 
 
-def mainframe_event(event): status_bar['text'] = 'Click a button to continue'
+def self_event(event): status_bar['text'] = 'Click a button to continue'
 
 # **************************************************** End of mouse movements ******************************************
 
@@ -183,13 +186,14 @@ def train():
     global textFile, valueFile
     if valuefile and textfile is not None:
         reset = askokcancel("Reset training data", "Are you sure?")
+        status_bar['text'] = "Loading input values into WordMap..."
         if reset is True:
             try:
                 print("Loading input values into WordMap...\n")
                 with open(textfile, 'r') as textFile:
                     with open(valuefile, 'r') as valueFile:
                         WordMap.buildWordMap(reset, textFile, valueFile)
-                        progressBar()
+                        progressNotice()
             except IOError:
                 print("File not found. Returning to main menu...\n")
         else:
@@ -200,11 +204,10 @@ def train():
 # ********************************************* End of Read files for training *****************************************
 
 
-# **************************************************** Progress Bar Function *******************************************
-def progressBar():
+# *************************************************** progressNotice Function ******************************************
+def progressNotice():
     showinfo('Info', "Process completed!")
-    # time.sleep(3)
-# ************************************************* End of Progress Bar ************************************************
+# ************************************************ End of progressNotice ***********************************************
 
 
 # ***************************************** Show training frame ********************************************************
@@ -217,7 +220,7 @@ class Training(tk.Frame):
 
         # ************************** tweet text button and entry *******************
         tweetTextBtn = tk.Button(self, text="Tweet text", width=12, command=tweetText)
-        tweetTextBtn.grid(row=0, column=0, padx=10, pady=20)
+        tweetTextBtn.grid(row=0, column=0, padx=5, pady=30)
         tweetTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
 
         tweetTextLabel = tk.Label(self, width=25)
@@ -227,7 +230,7 @@ class Training(tk.Frame):
 
         # ******************** tweet values button and entry *******************
         tweetValuesBtn = tk.Button(self, text="Tweet values", width=12, command=tweetValues)
-        tweetValuesBtn.grid(row=3, column=0, pady=25)
+        tweetValuesBtn.grid(row=3, column=0, pady=28)
         tweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
 
         tweetValuesLabel = tk.Label(self, width=25)
@@ -236,14 +239,14 @@ class Training(tk.Frame):
         # ********************************End of tweet values button and entry *************************
 
         # training button
-        trainBtn = tk.Button(self, text="Train", width=13, command=train)
+        trainBtn = tk.Button(self, text="Train", width=12, command=train)
         trainBtn.grid(row=4, column=0)
         trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
 
         # testing button
-        cancelBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))
-        cancelBtn.grid(row=5, column=0)
-        cancelBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+        backBtn = tk.Button(self, text="Back", width=10, command=lambda: controller.show_frame(StartPage))
+        backBtn.grid(row=4, column=2)
+        backBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
 
 
         # clear button for training frame
@@ -251,7 +254,7 @@ class Training(tk.Frame):
             tweetTextLabel['text'] = ""
             tweetValuesLabel['text'] = ""
 
-        clearTrainBtn = tk.Button(self, text="Clear", width=13, command=clearTraining)
+        clearTrainBtn = tk.Button(self, text="Clear", width=10, command=clearTraining)
         clearTrainBtn.grid(row=4, column=1)
         clearTrainBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
 # ******************************************** End of Training Frame ***************************************************
@@ -279,7 +282,7 @@ def testTweetValues():
 # end of load tweet values for test ***********************************
 
 
-#  Read files for test ************************************************
+#  Read files for testing ************************************************
 def test():
     global textFile, valueFile
     if valuefile and textfile is not None:
@@ -288,7 +291,7 @@ def test():
             with open(textfile, 'r') as textFile:
                 with open(valuefile, 'r') as valueFile:
                     EvaluateText.evaluate(textFile, valueFile)
-                    # progressBar()
+                    progressNotice()
                     # print (reset, textFile, valueFile)
                     # print(textFile, valueFile)
         except IOError:
@@ -309,7 +312,7 @@ class Test(tk.Frame):
 
         # ************************** tweet text button and entry *******************
         testTweetTxtBtn = tk.Button(self, text="Tweet text", width=12, command=testTweetText)
-        testTweetTxtBtn.grid(row=0, column=0, padx=10, pady=20)
+        testTweetTxtBtn.grid(row=0, column=0, padx=5, pady=35)
         testTweetTxtBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
 
         testTweetTxtLabel = tk.Label(self, width=25)
@@ -319,7 +322,7 @@ class Test(tk.Frame):
 
         # *********************** tweet values button and label ********************
         testTweetValuesBtn = tk.Button(self, text="Tweet values", width=12, command=testTweetValues)
-        testTweetValuesBtn.grid(row=3, column=0, pady=25)
+        testTweetValuesBtn.grid(row=3, column=0, pady=30)
         testTweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
 
         testTweetValuesLabel = tk.Label(self, width=25)
@@ -328,13 +331,13 @@ class Test(tk.Frame):
         # ********************End of tweet values button and label *******************
 
         # test button
-        testBtn = tk.Button(self, text="Test", width=13, command=test)
+        testBtn = tk.Button(self, text="Test", width=12, command=test)
         testBtn.grid(row=4, column=0)
         testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
 
         # back button
-        backBtn = tk.Button(self, text="Back", width=13, command=lambda: controller.show_frame(StartPage))
-        backBtn.grid(row=5, column=1)
+        backBtn = tk.Button(self, text="Back", width=10, command=lambda: controller.show_frame(StartPage))
+        backBtn.grid(row=4, column=2)
         backBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
 
         # clear button for test frame
@@ -342,11 +345,89 @@ class Test(tk.Frame):
             testTweetTxtLabel['text'] = ""
             testTweetValuesLabel['text'] = ""
 
-        clearTestBtn = tk.Button(self, text="Clear", width=13, command=clearTest)
+        clearTestBtn = tk.Button(self, text="Clear", width=8, command=clearTest)
         clearTestBtn.grid(row=4, column=1)
-        clearTestBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+        clearTestBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
 
 # *********************************************** End of test Frame ****************************************************
+
+
+# ******************************************* show GUI Evaluate frame **************************************************
+class GUI(tk.Frame):
+    def __init__(self, parent, controller):
+
+        # 'parent class' is 'WelcomeWindow'
+        tk.Frame.__init__(self, parent, background='gray')
+        inputLabel = tk.Label(self, text="Input text", bg='gray')
+        inputLabel.grid(row=0, column=0, padx=3, pady=20, sticky="W")
+        inputLabel.config(font=("Arial", 14))
+        
+        inputStr = tk.Entry(self, width=46)
+        inputStr.grid(row=0, column=1, ipady=6, pady=10)
+        inputStr.config(font=("Arial", 13))
+        
+        predictedLabel = tk.Label(self, text="Predicted:", bg='gray')
+        predictedLabel.grid(row=1, column=0)
+        predictedLabel.config(font=("Arial", 14))
+        
+        v = tk.StringVar()
+        output = tk.Label(self, textvariable=v, font=("Arial", 15), bg='gray')
+        output.grid(row=1, column=1, sticky="W",  pady=20)
+        output.config(font=("Arial", 14))
+        
+        # predict function for predict button ************************************************
+        def predButton():
+            with open("./data/Priors.csv", "r") as priorFile:
+                priors = priorFile.readline().strip().split(',')[1:]
+                priors = [log10(float(x)) for x in priors]
+            predValues = []
+            unfound = []
+        
+            wf = WordFilter()
+            words = inputStr.get()
+            print "Input:", words
+            words = wf.filterWords(words)
+        
+            print "Tokens:", words
+            for word in words:
+                try:
+                    values = evaluateWord(word)
+                except IOError:
+                    print "WordMap not found. Please train system first.\n"
+                    raise
+                if values is not None:
+                    predValues.append(values)
+                else:
+                    unfound.append(word)
+        
+            predValues = map(sum, zip(*predValues))
+            predProb = map(sum, zip(priors, predValues))
+            predEmotion = guessEmotion(predProb)
+            v.set(predEmotion)
+            print "Unfound:", unfound
+            print "Prob:", ','.join(['%.2f ' % x for x in predProb])
+            print
+        
+        # predict button *************************************************
+        predictBtn = tk.Button(self, text="Predict", command=predButton)
+        predictBtn.grid(row=2, column=1, sticky="nsew", pady=10)
+        predictBtn.config(relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
+        
+        # back button for GUI frame
+        backBtn = tk.Button(self, text="Back to main menu", command=lambda: controller.show_frame(StartPage))
+        backBtn.grid(row=3, column=1, sticky="nwes")
+        backBtn.config(bd=2, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+
+        # clear button for GUI frame
+        def clearTextEntry():
+            v.set("")
+            inputStr.delete(0, 'end')
+        
+        # clear btn for GUI frame
+        clearTestBtn = tk.Button(self, text="Clear", command=clearTextEntry)
+        clearTestBtn.grid(row=2, column=0, padx=10)
+        clearTestBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+# ******************************************* End of GUI Evaluate frame ************************************************
 
 
 # ********************************************* running the main class *************************************************
@@ -361,6 +442,7 @@ filemenu = tk.Menu(menubar, tearoff=0)
 menubar.add_cascade(label='File', menu=filemenu)
 menubar.add_cascade(label='Quit', command=root.quit)
 
+
 # *************************************** Event to show on status bar **************************************************
 def print_event(): status_bar['text'] = 'Now Printing..........'
 
@@ -374,20 +456,21 @@ saveStatus = filemenu.add_command(label='Save', command=save_event)
 
 # ************************************************ End of menu *********************************************************
 
-# ************************* status bar *****************************
+# ******************************************************** status bar **************************************************
 status_bar_frame = tk.Frame(container, bd=1, relief=tk.SUNKEN)
 status_bar_frame.grid(row=4, column=0, columnspan=6, sticky="we")
 
-status_bar = tk.Label(status_bar_frame, text="status bar", bg="#dfdfdf", anchor=tk.W)
+status_bar = tk.Label(status_bar_frame, text="Welcome", bg="#dfdfdf", anchor=tk.W)
 
 status_bar.pack(side=tk.BOTTOM, fill=tk.X)
 # status_bar.config(anchor=tk.W, font=("Times", 11))
 status_bar.config(font=("Times", 11))
 status_bar.grid_propagate(0)
+# ********************************************* End of status bar ******************************************************
 
 # ************************************************** Centralise the window *********************************************
 window_height = 280
-window_width = 446
+window_width = 520
 # specifies width and height of window1
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
