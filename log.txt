@@ -1,18 +1,19 @@
-cfc3445 Michael Osakoh 4 minutes ago - Added the GUI frame, all buttons functioning.
-3aa20a0 Michael Osakoh 14 hours ago - Modified status bar
-9ced24f Michael Osakoh 15 hours ago - Increased height of root frame
-4fc0f76 Michael Osakoh 17 hours ago - Added activeforeground color to clear buttons
-6528d03 Michael Osakoh 19 hours ago - Added functioning clear button to the test frame
-80458c4 Michael Osakoh 20 hours ago - Added activeforeground color to all buttons
-c1dc5fd Michael Osakoh 20 hours ago - Added functioning clear button in the training frame
-abf8f31 Michael Osakoh 22 hours ago - Added working test frame
-e795acc Michael Osakoh 23 hours ago - Added more info command
-d5ec646 Michael Osakoh 23 hours ago - Added command to load the Training frame from the start frame
-b25b8f7 Michael Osakoh 23 hours ago - Added train function for Train button
-11ff906 Michael Osakoh 23 hours ago - Added Training frame
-097f8f9 Michael Osakoh 23 hours ago - Added bind for all the buttons on start frame
-94653cd Michael Osakoh 23 hours ago - Added function for Exit button
-0addc7a Michael Osakoh 23 hours ago - Add menubar
-b9fe578 Michael Osakoh 23 hours ago - Mouse movement(StartPage) for status bar
-6a08aab Michael Osakoh 23 hours ago - Added start frame
-80176a0 Michael Osakoh 26 hours ago - Initial commit
+8e27c34 Michael Osakoh 2 minutes ago - Added the text evaluate frame with all buttons functioning.
+cfc3445 Michael Osakoh 2 days ago - Added the GUI frame, all buttons functioning.
+3aa20a0 Michael Osakoh 3 days ago - Modified status bar
+9ced24f Michael Osakoh 3 days ago - Increased height of root frame
+4fc0f76 Michael Osakoh 3 days ago - Added activeforeground color to clear buttons
+6528d03 Michael Osakoh 3 days ago - Added functioning clear button to the test frame
+80458c4 Michael Osakoh 3 days ago - Added activeforeground color to all buttons
+c1dc5fd Michael Osakoh 3 days ago - Added functioning clear button in the training frame
+abf8f31 Michael Osakoh 3 days ago - Added working test frame
+e795acc Michael Osakoh 3 days ago - Added more info command
+d5ec646 Michael Osakoh 3 days ago - Added command to load the Training frame from the start frame
+b25b8f7 Michael Osakoh 3 days ago - Added train function for Train button
+11ff906 Michael Osakoh 3 days ago - Added Training frame
+097f8f9 Michael Osakoh 3 days ago - Added bind for all the buttons on start frame
+94653cd Michael Osakoh 3 days ago - Added function for Exit button
+0addc7a Michael Osakoh 3 days ago - Add menubar
+b9fe578 Michael Osakoh 3 days ago - Mouse movement(StartPage) for status bar
+6a08aab Michael Osakoh 3 days ago - Added start frame
+80176a0 Michael Osakoh 3 days ago - Initial commit
