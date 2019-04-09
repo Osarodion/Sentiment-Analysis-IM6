@@ -10,6 +10,8 @@ from EmotionDetection.EvaluateText import evaluateWord
 from EmotionDetection.EvaluateText import guessEmotion
 from math import log10
 
+import codecs
+
 
 # initialise text file and value file to empty
 textfile = ""
@@ -190,7 +192,8 @@ def train():
         if reset is True:
             try:
                 print("Loading input values into WordMap...\n")
-                with open(textfile, 'r') as textFile:
+                # with open(textfile, 'r') as textFile:
+                with codecs.open(textfile, 'r', encoding='utf-8', errors='ignore') as textFile:
                     with open(valuefile, 'r') as valueFile:
                         WordMap.buildWordMap(reset, textFile, valueFile)
                         progressNotice()
@@ -288,8 +291,11 @@ def test():
     if valuefile and textfile is not None:
         try:
             print("\nRunning text evaluation...\n")
-            with open(textfile, 'r') as textFile:
-                with open(valuefile, 'r') as valueFile:
+            with codecs.open(textfile, 'r', encoding='utf-8', errors='ignore') as textFile:
+                with codecs.open(valuefile, 'r', encoding='utf-8', errors='ignore') as valueFile:
+
+            # with open(textfile, 'r') as textFile:
+            #     with open(valuefile, 'r') as valueFile:
                     EvaluateText.evaluate(textFile, valueFile)
                     progressNotice()
                     # print (reset, textFile, valueFile)
