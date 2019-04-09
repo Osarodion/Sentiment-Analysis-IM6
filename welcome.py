@@ -38,7 +38,7 @@ class WelcomeWindow(tk.Tk):
         # empty list - key & values
         self.frames = {}
 
-        for F in (StartPage, Training, Test, GUI):
+        for F in (StartPage, Training, Test, GUI, Evaluate):
             frame = F(container, self)
             self.frames[F] = frame
             frame.grid(row=0, column=0, sticky="nsew")
@@ -75,7 +75,7 @@ class StartPage(tk.Frame):
         testBtn.bind("<Motion>", test_event)
 
         # evaluate text button
-        evalTextBtn = tk.Button(self, text="Evaluate Text", width=13)
+        evalTextBtn = tk.Button(self, text="Evaluate Text", width=13, command=lambda: controller.show_frame(Evaluate))
         evalTextBtn.grid(row=2, column=0, pady=25)
         evalTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
         evalTextBtn.bind("<Motion>", eval_text_event)
@@ -83,7 +83,7 @@ class StartPage(tk.Frame):
         # ************************** button to the right ********************************
 
         # gui evaluation button
-        guiEvalBtn = tk.Button(self, text="GUI Evaluation", width=13, command=lambda: controller.show_frame(GUI))
+        guiEvalBtn = tk.Button(self, text="Word Prediction", width=13, command=lambda: controller.show_frame(GUI))
         guiEvalBtn.grid(row=0, column=1, padx=40)
         guiEvalBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
         guiEvalBtn.bind("<Motion>", gui_eval_event)
@@ -351,6 +351,71 @@ class Test(tk.Frame):
 
 # *********************************************** End of test Frame ****************************************************
 
+# ********************************************* Show evaluate frame ********************************************************
+
+#  load tweet text for test ***************************************
+def evaluateTweetText():
+    global textfile
+    current_path = "./data/"
+    textfile = tkFileDialog.askopenfilename(title='Choose text file for evaluation', initialdir=current_path, filetypes=[("CSV files", "*.csv")])
+
+    evalTweetTxtLabel.config(text=os.path.basename(textfile))
+# end of load tweet text for test **********************************
+
+
+#  Read files for text evaluation ************************************************
+def evaluate():
+    global textFile
+    if textfile is not None:
+        try:
+            print("\nRunning text evaluation...\n")
+            with open(textfile, 'r') as textFile:
+
+                EvaluateText.evaluate(textFile)
+                progressNotice()
+        except IOError:
+            showerror('TextFile not found!', 'Check file')
+    else:
+        showerror('Error!', 'text file not selected')
+
+# end of Read files for evaluate ********************************************
+
+
+class Evaluate(tk.Frame):
+
+    def __init__(self, parent, controller):
+        # 'parent class' is 'WelcomeWindow'
+        tk.Frame.__init__(self, parent, background='gray')
+        global evalTweetTxtLabel
+        # ************************** tweet text button and entry *******************
+        evalTweetTxtBtn = tk.Button(self, text="Text Evaluate", width=12, command=evaluateTweetText)
+        evalTweetTxtBtn.grid(row=0, column=0, padx=5, pady=35)
+        evalTweetTxtBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
+
+        evalTweetTxtLabel = tk.Label(self, width=25)
+        evalTweetTxtLabel.grid(row=0, column=1, ipady=5, pady=20)
+        evalTweetTxtLabel.config(bd=2, font=("Arial ITALIC", 13))
+        # ********************End of tweet Text button and label *********************
+
+        # test button
+        evaluateBtn = tk.Button(self, text="Evaluate", width=12, command=evaluate)
+        evaluateBtn.grid(row=4, column=0)
+        evaluateBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
+
+        # back button
+        backBtn = tk.Button(self, text="Back", width=10, command=lambda: controller.show_frame(StartPage))
+        backBtn.grid(row=4, column=2)
+        backBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+
+        # clear button for test frame
+        def clearEvalText():
+            evalTweetTxtLabel['text'] = ""
+
+        clearEvalBtn = tk.Button(self, text="Clear", width=8, command=clearEvalText)
+        clearEvalBtn.grid(row=4, column=1)
+        clearEvalBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+
+# ********************************************* End of text evaluation Frame *******************************************
 
 # ******************************************* show GUI Evaluate frame **************************************************
 class GUI(tk.Frame):
