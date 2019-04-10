@@ -1,4 +1,7 @@
-ba2ece6 Michael Osakoh 8 hours ago - Added image for readme
+cda479b Michael Osakoh 83 seconds ago - Merge remote-tracking branch 'group/master'
+627997a Michael Osakoh 2 minutes ago - Final commit
+2e34e2e Osarodion 8 hours ago - Update and rename README.txt to README.md
+ba2ece6 Michael Osakoh 9 hours ago - Added image for readme
 d42b112 Michael Osakoh 9 hours ago - Changed fg color of Train, Test and Evaluate buttons to red
 f38a658 Michael Osakoh 9 hours ago - Extra events which displays on status bar added
 76277b0 Michael Osakoh 28 hours ago - Added Our values.docx and Our values.pdf
