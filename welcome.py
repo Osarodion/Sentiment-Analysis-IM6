@@ -13,10 +13,6 @@ from math import log10
 
 import codecs
 
-# import sys
-# reload(sys)
-# sys.setdefaultencoding('utf8')
-
 
 # initialise text file and value file to empty
 textfile = ""
@@ -69,6 +65,8 @@ class StartPage(tk.Frame):
         # 'parent class' is 'WelcomeWindow'
         tk.Frame.__init__(self, parent, background='gray')
         global status_bar
+
+        # ************************** button to the left ********************************
         # training button
         trainBtn = tk.Button(self, text="Training", width=13, command=lambda: controller.show_frame(Training))
         trainBtn.grid(row=0, column=0, padx=68, pady=25)
@@ -149,7 +147,7 @@ def file_train_values_event(event): status_bar['text'] = 'Select value file for 
 def train_btn_event(event): status_bar['text'] = 'Reset  data and train'
 
 
-def clear_event(event): status_bar['text'] = 'Clear selected file(s) to load another'
+def clear_event(event): status_bar['text'] = 'Clears selected file(s)'
 
 
 def back_welcome_event(event): status_bar['text'] = 'Go back to main menu'
@@ -164,7 +162,7 @@ def file_test_text_event(event): status_bar['text'] = 'Select text file for test
 def file_test_values_event(event): status_bar['text'] = 'Select the value file for testing'
 
 
-def test_btn_event(event): status_bar['text'] = 'Runs a test on the selected files'
+def test_btn_event(event): status_bar['text'] = 'Run test on selected files'
 
 
 def eval_text_event(event): status_bar['text'] = "Evaluate input file that hasn't been pre-labelled"
@@ -308,7 +306,8 @@ class Training(tk.Frame):
 def testTweetText():
     global textfile
     current_path = "./data/"
-    textfile = tkFileDialog.askopenfilename(title='Choose text file', initialdir=current_path, filetypes=[("CSV files", "*.csv")])
+    textfile = tkFileDialog.askopenfilename(title='Choose text file', initialdir=current_path, filetypes=[("CSV files",
+                                                                                                           "*.csv")])
 
     testTweetTxtLabel.config(text=os.path.basename(textfile))
 # end of load tweet text for test **********************************
@@ -318,7 +317,8 @@ def testTweetText():
 def testTweetValues():
     global valuefile
     current_path = "./data/"
-    valuefile = tkFileDialog.askopenfilename(title='Choose value file', initialdir=current_path, filetypes=[("CSV files", "*.csv")])
+    valuefile = tkFileDialog.askopenfilename(title='Choose value file', initialdir=current_path, filetypes=[("CSV files"
+                                                                                                            , "*.csv")])
 
     testTweetValuesLabel.config(text=os.path.basename(valuefile))
 # end of load tweet values for test ***********************************
@@ -407,7 +407,8 @@ class Test(tk.Frame):
 def evaluateTweetText():
     global textfile
     current_path = "./data/"
-    textfile = tkFileDialog.askopenfilename(title='Choose text file for evaluation', initialdir=current_path, filetypes=[("CSV files", "*.csv")])
+    textfile = tkFileDialog.askopenfilename(title='Choose text file for evaluation', initialdir=current_path,
+                                            filetypes=[("CSV files", "*.csv")])
 
     evalTweetTxtLabel.config(text=os.path.basename(textfile))
 # end of load tweet text for test **********************************
@@ -463,7 +464,7 @@ class Evaluate(tk.Frame):
         backBtn.bind("<Motion>", back_welcome_event)
 
         # clear button for test frame
-        def clearEvalText(): 
+        def clearEvalText():
             evalTweetTxtLabel['text'] = ""
 
         clearEvalBtn = tk.Button(self, text="Clear", width=8, command=clearEvalText)
