@@ -463,7 +463,7 @@ class Evaluate(tk.Frame):
         backBtn.bind("<Motion>", back_welcome_event)
 
         # clear button for test frame
-        def clearEvalText():
+        def clearEvalText(): 
             evalTweetTxtLabel['text'] = ""
 
         clearEvalBtn = tk.Button(self, text="Clear", width=8, command=clearEvalText)
