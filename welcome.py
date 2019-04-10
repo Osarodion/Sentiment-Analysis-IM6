@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import Tkinter as tk
 from tkMessageBox import *
 import os
@@ -11,6 +12,10 @@ from EmotionDetection.EvaluateText import guessEmotion
 from math import log10
 
 import codecs
+
+# import sys
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
 
 # initialise text file and value file to empty
@@ -129,29 +134,55 @@ class StartPage(tk.Frame):
         exitBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), fg='red')
         exitBtn.bind("<Motion>", exit_event)
 
-        # # ************************* status bar *****************************
-        # status_bar_frame = tk.Frame(self, bd=1, relief=tk.SUNKEN)
-        # status_bar_frame.grid(row=4, column=0, columnspan=6, sticky="we")
-        #
-        # status_bar = tk.Label(status_bar_frame, text="status bar", bg="#dfdfdf", anchor=tk.W)
-        #
-        # status_bar.pack(side=tk.BOTTOM, fill=tk.X)
-        # # status_bar.config(anchor=tk.W, font=("Times", 11))
-        # status_bar.config(font=("Times", 11))
-        # status_bar.grid_propagate(0)
-# ******************** End of Start Page *************************************
+# ***************************************** End of Start Page **********************************************************
 
-# ***************** Mouse movement(StartPage) for status bar **********************
+# ******************** Events for All Buttons and Frames and shows on the status bar ***********************************
 def train_event(event): status_bar['text'] = 'Click to re-train the model'
 
 
+def file_train_text_event(event): status_bar['text'] = 'Select text file for training'
+
+
+def file_train_values_event(event): status_bar['text'] = 'Select value file for training'
+
+
+def train_btn_event(event): status_bar['text'] = 'Reset  data and train'
+
+
+def clear_event(event): status_bar['text'] = 'Clear selected file(s) to load another'
+
+
+def back_welcome_event(event): status_bar['text'] = 'Go back to main menu'
+
+
 def test_event(event): status_bar['text'] = 'Run the system and test its accuracy'
+
+
+def file_test_text_event(event): status_bar['text'] = 'Select text file for testing'
+
+
+def file_test_values_event(event): status_bar['text'] = 'Select the value file for testing'
+
+
+def test_btn_event(event): status_bar['text'] = 'Runs a test on the selected files'
 
 
 def eval_text_event(event): status_bar['text'] = "Evaluate input file that hasn't been pre-labelled"
 
 
 def gui_eval_event(event): status_bar['text'] = 'Click to get emotion from text'
+
+
+def predict_event(event): status_bar['text'] = 'Predicts the emotion from the inputted text'
+
+
+def clear_predict_event(event): status_bar['text'] = 'Clears the text'
+
+
+def file_eval_text_event(event): status_bar['text'] = 'Select a text file to evaluate'
+
+
+def eval_event(event): status_bar['text'] = 'Evaluates a file that hasn\'t been pre-labelled'
 
 
 def info_event(event): status_bar['text'] = 'For more information'
@@ -192,9 +223,12 @@ def train():
         if reset is True:
             try:
                 print("Loading input values into WordMap...\n")
-                # with open(textfile, 'r') as textFile:
-                with codecs.open(textfile, 'r', encoding='utf-8', errors='ignore') as textFile:
-                    with open(valuefile, 'r') as valueFile:
+                with codecs.open(textfile, 'rU', encoding='utf-8-sig', errors='ignore') as textFile:
+                    with codecs.open(valuefile, 'rU', encoding='utf-8-sig', errors='ignore') as valueFile:
+
+                        # codecs.open('utf8file.csv', 'rU', encoding='utf-8-sig')
+                        # with open(textfile, 'r') as textFile:
+                        # with open(valuefile, 'r') as valueFile:
                         WordMap.buildWordMap(reset, textFile, valueFile)
                         progressNotice()
             except IOError:
@@ -225,6 +259,7 @@ class Training(tk.Frame):
         tweetTextBtn = tk.Button(self, text="Tweet text", width=12, command=tweetText)
         tweetTextBtn.grid(row=0, column=0, padx=5, pady=30)
         tweetTextBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
+        tweetTextBtn.bind("<Motion>", file_train_text_event)
 
         tweetTextLabel = tk.Label(self, width=25)
         tweetTextLabel.grid(row=0, column=1, ipady=5, pady=20)
@@ -235,6 +270,7 @@ class Training(tk.Frame):
         tweetValuesBtn = tk.Button(self, text="Tweet values", width=12, command=tweetValues)
         tweetValuesBtn.grid(row=3, column=0, pady=28)
         tweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
+        tweetValuesBtn.bind("<Motion>", file_train_values_event)
 
         tweetValuesLabel = tk.Label(self, width=25)
         tweetValuesLabel.grid(row=3, column=1, ipady=5)
@@ -244,13 +280,15 @@ class Training(tk.Frame):
         # training button
         trainBtn = tk.Button(self, text="Train", width=12, command=train)
         trainBtn.grid(row=4, column=0)
-        trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
+        trainBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), fg='red')
+        trainBtn.bind("<Motion>", train_event)
+
 
         # testing button
         backBtn = tk.Button(self, text="Back", width=10, command=lambda: controller.show_frame(StartPage))
         backBtn.grid(row=4, column=2)
         backBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
-
+        backBtn.bind("<Motion>", back_welcome_event)
 
         # clear button for training frame
         def clearTraining():
@@ -260,6 +298,7 @@ class Training(tk.Frame):
         clearTrainBtn = tk.Button(self, text="Clear", width=10, command=clearTraining)
         clearTrainBtn.grid(row=4, column=1)
         clearTrainBtn.config(bd=4, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+        clearTrainBtn.bind("<Motion>", clear_event)
 # ******************************************** End of Training Frame ***************************************************
 
 
@@ -291,11 +330,11 @@ def test():
     if valuefile and textfile is not None:
         try:
             print("\nRunning text evaluation...\n")
-            with codecs.open(textfile, 'r', encoding='utf-8', errors='ignore') as textFile:
-                with codecs.open(valuefile, 'r', encoding='utf-8', errors='ignore') as valueFile:
-
-            # with open(textfile, 'r') as textFile:
-            #     with open(valuefile, 'r') as valueFile:
+            with codecs.open(textfile, 'rU', encoding='utf-8-sig', errors='ignore') as textFile:
+                with codecs.open(valuefile, 'rU', encoding='utf-8-sig', errors='ignore') as valueFile:
+                    # codecs.open('utf8file.csv', 'rU', encoding='utf-8-sig')
+                    # with open(textfile, 'r') as textFile:
+                    # with open(valuefile, 'r') as valueFile:
                     EvaluateText.evaluate(textFile, valueFile)
                     progressNotice()
                     # print (reset, textFile, valueFile)
@@ -320,6 +359,7 @@ class Test(tk.Frame):
         testTweetTxtBtn = tk.Button(self, text="Tweet text", width=12, command=testTweetText)
         testTweetTxtBtn.grid(row=0, column=0, padx=5, pady=35)
         testTweetTxtBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
+        testTweetTxtBtn.bind("<Motion>", file_test_text_event)
 
         testTweetTxtLabel = tk.Label(self, width=25)
         testTweetTxtLabel.grid(row=0, column=1, ipady=5, pady=20)
@@ -330,6 +370,7 @@ class Test(tk.Frame):
         testTweetValuesBtn = tk.Button(self, text="Tweet values", width=12, command=testTweetValues)
         testTweetValuesBtn.grid(row=3, column=0, pady=30)
         testTweetValuesBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
+        testTweetValuesBtn.bind("<Motion>", file_test_values_event)
 
         testTweetValuesLabel = tk.Label(self, width=25)
         testTweetValuesLabel.grid(row=3, column=1, ipady=5)
@@ -339,12 +380,14 @@ class Test(tk.Frame):
         # test button
         testBtn = tk.Button(self, text="Test", width=12, command=test)
         testBtn.grid(row=4, column=0)
-        testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
+        testBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), fg='red')
+        testBtn.bind("<Motion>", test_btn_event)
 
         # back button
         backBtn = tk.Button(self, text="Back", width=10, command=lambda: controller.show_frame(StartPage))
         backBtn.grid(row=4, column=2)
         backBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+        backBtn.bind("<Motion>", back_welcome_event)
 
         # clear button for test frame
         def clearTest():
@@ -354,10 +397,11 @@ class Test(tk.Frame):
         clearTestBtn = tk.Button(self, text="Clear", width=8, command=clearTest)
         clearTestBtn.grid(row=4, column=1)
         clearTestBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
-
+        clearTestBtn.bind("<Motion>", clear_event)
 # *********************************************** End of test Frame ****************************************************
 
-# ********************************************* Show evaluate frame ********************************************************
+
+# ********************************************* Show evaluate frame ****************************************************
 
 #  load tweet text for test ***************************************
 def evaluateTweetText():
@@ -375,7 +419,9 @@ def evaluate():
     if textfile is not None:
         try:
             print("\nRunning text evaluation...\n")
-            with open(textfile, 'r') as textFile:
+            with codecs.open(textfile, 'rU', encoding='utf-8-sig', errors='ignore') as textFile:
+                # codecs.open('utf8file.csv', 'rU', encoding='utf-8-sig')
+                # with open(textfile, 'r') as textFile:
 
                 EvaluateText.evaluate(textFile)
                 progressNotice()
@@ -397,6 +443,7 @@ class Evaluate(tk.Frame):
         evalTweetTxtBtn = tk.Button(self, text="Text Evaluate", width=12, command=evaluateTweetText)
         evalTweetTxtBtn.grid(row=0, column=0, padx=5, pady=35)
         evalTweetTxtBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 12), activeforeground='gray')
+        evalTweetTxtBtn.bind("<Motion>", file_eval_text_event)
 
         evalTweetTxtLabel = tk.Label(self, width=25)
         evalTweetTxtLabel.grid(row=0, column=1, ipady=5, pady=20)
@@ -406,12 +453,14 @@ class Evaluate(tk.Frame):
         # test button
         evaluateBtn = tk.Button(self, text="Evaluate", width=12, command=evaluate)
         evaluateBtn.grid(row=4, column=0)
-        evaluateBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
+        evaluateBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), fg='red')
+        evaluateBtn.bind("<Motion>", eval_event)
 
         # back button
         backBtn = tk.Button(self, text="Back", width=10, command=lambda: controller.show_frame(StartPage))
         backBtn.grid(row=4, column=2)
         backBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+        backBtn.bind("<Motion>", back_welcome_event)
 
         # clear button for test frame
         def clearEvalText():
@@ -420,8 +469,9 @@ class Evaluate(tk.Frame):
         clearEvalBtn = tk.Button(self, text="Clear", width=8, command=clearEvalText)
         clearEvalBtn.grid(row=4, column=1)
         clearEvalBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
-
+        clearEvalBtn.bind("<Motion>", clear_event)
 # ********************************************* End of text evaluation Frame *******************************************
+
 
 # ******************************************* show GUI Evaluate frame **************************************************
 class GUI(tk.Frame):
@@ -483,11 +533,13 @@ class GUI(tk.Frame):
         predictBtn = tk.Button(self, text="Predict", command=predButton)
         predictBtn.grid(row=2, column=1, sticky="nsew", pady=10)
         predictBtn.config(relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='red')
-        
+        predictBtn.bind("<Motion>", predict_event)
+
         # back button for GUI frame
         backBtn = tk.Button(self, text="Back to main menu", command=lambda: controller.show_frame(StartPage))
         backBtn.grid(row=3, column=1, sticky="nwes")
         backBtn.config(bd=2, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+        backBtn.bind("<Motion>", back_welcome_event)
 
         # clear button for GUI frame
         def clearTextEntry():
@@ -498,6 +550,7 @@ class GUI(tk.Frame):
         clearTestBtn = tk.Button(self, text="Clear", command=clearTextEntry)
         clearTestBtn.grid(row=2, column=0, padx=10)
         clearTestBtn.config(bd=3, relief=tk.RAISED, font=("Arial Bold", 13), activeforeground='gray')
+        clearTestBtn.bind("<Motion>", clear_predict_event)
 # ******************************************* End of GUI Evaluate frame ************************************************
 
 
@@ -515,10 +568,10 @@ menubar.add_cascade(label='Quit', command=root.quit)
 
 
 # *************************************** Event to show on status bar **************************************************
-def print_event(): status_bar['text'] = 'Now Printing..........'
+def print_event(): status_bar['text'] = 'Now Printing................................'
 
 
-def save_event(): status_bar['text'] = 'Saving files...........'
+def save_event(): status_bar['text'] = 'Saving files..................................'
 
 
 # ********************************************* Creates  "File" Sub-menus **********************************************
