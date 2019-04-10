@@ -1,3 +1,9 @@
+![](EmotionIcon.png)
+
+Plutchik's wheel of emotions, with seven basic emotions on the second
+layer from the center, outer layers are mild variations of the basic emotions
+whereas inner layers are the intense variations.
+
 EmotionDetection v1
 
 Bio:
