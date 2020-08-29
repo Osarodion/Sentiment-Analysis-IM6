@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7c37f9ab-d6bc-4a38-ae91-4280811c6dce" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/EmotionDetection-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EmotionDetection-master.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/welcome.py" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/EmotionDetection_master$roughFile.coverage" NAME="roughFile Coverage Results" MODIFIED="1554653508251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EmotionDetection_master$welcome.coverage" NAME="welcome Coverage Results" MODIFIED="1554980662493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EmotionDetection_master$trainingFrame.coverage" NAME="trainingFrame Coverage Results" MODIFIED="1554589313597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EmotionDetection_master$therasamayTweet.coverage" NAME="therasamayTweet Coverage Results" MODIFIED="1554774837827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tmay" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>end</find>
+      <find>progressBar</find>
+      <find>testTweetText</find>
+      <find>prog</find>
+      <find>pb</find>
+      <find>command</find>
+      <find>label</find>
+      <find>GUI E</find>
+      <find>lineID</find>
+      <find>no words</find>
+      <find>loc</find>
+      <find>message</find>
+      <find>Message</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>self</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="JupyterTrust" id="edf43f3f-4941-4c84-974d-710b88401997" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="948" />
+    <option name="width" value="981" />
+    <option name="height" value="1044" />
+  </component>
+  <component name="ProjectId" id="1glaOml142ITA9Te5h8Tr3TjcTq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Osas\Documents\UH Course Documents\7COM1071-0105-2018 - Investigative Methods for Computer Science\The Project - Assignment 2 (60 marks)\EmotionDetection-master" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.welcome">
+    <configuration name="roughFile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="EmotionDetection-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/roughFile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="therasamayTweet" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="EmotionDetection-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tmay" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tmay/therasamayTweet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="trainingFrame" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="EmotionDetection-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trainingFrame.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="welcome" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="EmotionDetection-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/welcome.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.welcome" />
+        <item itemvalue="Python.therasamayTweet" />
+        <item itemvalue="Python.roughFile" />
+        <item itemvalue="Python.trainingFrame" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c37f9ab-d6bc-4a38-ae91-4280811c6dce" name="Default Changelist" comment="" />
+      <created>1554558108165</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554558108165</updated>
+      <workItem from="1554558112745" duration="293000" />
+      <workItem from="1554558499555" duration="39373000" />
+      <workItem from="1554639970101" duration="9615000" />
+      <workItem from="1554655273545" duration="379000" />
+      <workItem from="1554774428966" duration="695000" />
+      <workItem from="1554806943941" duration="1409000" />
+      <workItem from="1554819965146" duration="3540000" />
+      <workItem from="1554827423787" duration="237000" />
+      <workItem from="1554829780308" duration="2490000" />
+      <workItem from="1554832785306" duration="6211000" />
+      <workItem from="1554841796447" duration="1957000" />
+      <workItem from="1554845434176" duration="1516000" />
+      <workItem from="1554847255242" duration="730000" />
+      <workItem from="1554848071487" duration="2204000" />
+      <workItem from="1554881346947" duration="19664000" />
+      <workItem from="1554969610918" duration="2908000" />
+      <workItem from="1554980647819" duration="49000" />
+      <workItem from="1598691605322" duration="788000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1554561675330</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554561675330</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added start frame">
+      <created>1554571362601</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554571362601</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Mouse movement(StartPage) for status bar">
+      <created>1554571583272</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554571583272</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add menubar">
+      <created>1554571660992</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554571660992</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added function for Exit button">
+      <created>1554571878377</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1554571878377</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added bind for all the buttons on start frame">
+      <created>1554572022572</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554572022572</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added Training frame">
+      <created>1554572142981</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1554572142981</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added train function for Train button">
+      <created>1554572282807</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1554572282807</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added command to load the Training frame from the start frame">
+      <created>1554572512242</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1554572512242</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added more info command">
+      <created>1554572717517</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554572717517</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added working test frame">
+      <created>1554577664656</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1554577664656</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added functioning clear button in the training frame">
+      <created>1554582832323</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1554582832323</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added activeforeground color to all buttons">
+      <created>1554584509364</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1554584509364</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added functioning clear button to the test frame">
+      <created>1554586845070</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1554586845070</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added activeforeground color to clear buttons">
+      <created>1554594751390</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1554594751390</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Increased height of root frame">
+      <created>1554602713975</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1554602713975</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Modified status bar">
+      <created>1554603449472</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1554603449472</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added the GUI frame, all buttons functioning.">
+      <created>1554655358041</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1554655358041</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added the text evaluate frame with all buttons functioning.">
+      <created>1554827500990</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1554827500990</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added the text evaluate frame and all buttons are functioning.">
+      <created>1554835098584</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1554835098584</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added import codecs to evaluate text.py">
+      <created>1554837412258</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1554837412258</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added Our values.docx and Our values.pdf">
+      <created>1554838421954</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1554838421954</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Extra events which displays on status bar added">
+      <created>1554908227319</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1554908227319</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changed fg color of Train, Test and Evaluate buttons to red">
+      <created>1554908316489</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1554908316489</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Added image for readme">
+      <created>1554909787434</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1554909787434</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Final commit">
+      <created>1554940351610</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1554940351610</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Unused imports">
+      <created>1554940558635</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1554940558635</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Mouse movement(StartPage) for status bar" />
+    <MESSAGE value="Add menubar" />
+    <MESSAGE value="Added function for Exit button" />
+    <MESSAGE value="Added bind for all the buttons on start frame" />
+    <MESSAGE value="Added Training frame" />
+    <MESSAGE value="Added train function for Train button" />
+    <MESSAGE value="Added command to load the Training frame from the start frame" />
+    <MESSAGE value="Added more info command" />
+    <MESSAGE value="Added working test frame" />
+    <MESSAGE value="Added functioning clear button in the training frame" />
+    <MESSAGE value="Added activeforeground color to all buttons" />
+    <MESSAGE value="Added functioning clear button to the test frame" />
+    <MESSAGE value="Added activeforeground color to clear buttons" />
+    <MESSAGE value="Increased height of root frame" />
+    <MESSAGE value="Modified status bar" />
+    <MESSAGE value="Added the GUI frame, all buttons functioning." />
+    <MESSAGE value="Added the text evaluate frame with all buttons functioning." />
+    <MESSAGE value="Added the text evaluate frame and all buttons are functioning." />
+    <MESSAGE value="Added import codecs to evaluate text.py" />
+    <MESSAGE value="Added Our values.docx and Our values.pdf" />
+    <MESSAGE value="Extra events which displays on status bar added" />
+    <MESSAGE value="Changed fg color of Train, Test and Evaluate buttons to red" />
+    <MESSAGE value="Added image for readme" />
+    <MESSAGE value="Final commit" />
+    <MESSAGE value="Unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unused imports" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598691878410">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1598691878410" />
+    <state width="1877" height="218" key="GridCell.Tab.0.bottom" timestamp="1598692206820">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="218" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1598692206820" />
+    <state width="1877" height="218" key="GridCell.Tab.0.center" timestamp="1598692206820">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="218" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1598692206820" />
+    <state width="1877" height="218" key="GridCell.Tab.0.left" timestamp="1598692206820">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="218" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1598692206820" />
+    <state width="1877" height="218" key="GridCell.Tab.0.right" timestamp="1598692206820">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="218" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1598692206820" />
+    <state x="461" y="169" key="SettingsEditor" timestamp="1598692077088">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1598692077088" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/EmotionDetection__ToImprove$welcome.coverage" NAME="welcome Coverage Results" MODIFIED="1598692195839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

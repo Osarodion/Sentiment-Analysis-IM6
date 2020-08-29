@@ -1,0 +1,19 @@
+Predicted       Anger  Boredom  Empty  ...  Surprise  Worry  __all__
+Actual                                 ...                          
+Anger              79        0      0  ...         0      0       80
+Boredom             0       75      1  ...         0      0       81
+Empty               1        2     54  ...         3      0       75
+Enthusiasm          1        1      0  ...         0      0       79
+Fun                 0        1      0  ...         0      0       80
+Happiness           0        0      0  ...         0      0       81
+Hate                0        0      0  ...         0      0       81
+Love                0        2      0  ...         0      0       80
+Neutral             1        0      0  ...         2      0       78
+No Words Found      0        0      0  ...         0      0        2
+Relief              0        0      0  ...         1      0       81
+Sadness             0        0      0  ...         0      1       81
+Surprise            0        1      0  ...        64      0       77
+Worry               1        0      0  ...         1     71       80
+__all__            83       82     55  ...        71     72     1036
+
+[15 rows x 15 columns]

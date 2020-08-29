@@ -1,0 +1,33 @@
+Predicted   Anger  Boredom  Empty  Enthusiasm  Fun  Happiness  Hate  Love  \
+Actual                                                                      
+Anger           0        0      0           0    1          1     0     1   
+Boredom         0        1      0           0    0          5     1     2   
+Empty           0        0      4           0    0          4     0     3   
+Enthusiasm      0        0      0           1    0          8     0     3   
+Fun             0        0      0           0    7         12     0     1   
+Happiness       0        0      0           0    1         28     0     1   
+Hate            0        0      0           0    0          3    14     1   
+Love            0        0      0           0    0          4     0    18   
+Neutral         0        0      0           0    0          3     0     0   
+Relief          0        0      0           0    0          4     0     2   
+Sadness         0        0      0           0    0          2     1     0   
+Surprise        0        0      0           0    0         19     0     7   
+Worry           0        0      0           0    0         19     0     7   
+__all__         0        1      4           1    9        112    16    46   
+
+Predicted   Neutral  Relief  Sadness  Surprise  Worry  __all__  
+Actual                                                          
+Anger            19       0        3         1     47       73  
+Boredom          17       0       17         1     36       80  
+Empty            27       0       11         1     27       77  
+Enthusiasm       29       0        9         1     26       77  
+Fun              27       0        2         0     29       78  
+Happiness        24       0        5         0     16       75  
+Hate             11       0       12         0     39       80  
+Love             21       1       12         0     24       80  
+Neutral          52       0        2         0     18       75  
+Relief           22       2       15         0     33       78  
+Sadness           6       0       28         1     42       80  
+Surprise         26       0        1         5     21       79  
+Worry            26       0        1         5     21       79  
+__all__         307       3      118        15    379     1011  

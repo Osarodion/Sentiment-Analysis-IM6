@@ -1,0 +1,53 @@
+Predicted       Anger  Boredom  Empty  Enthusiasm  Fun  Happiness  Hate  Love  \
+Actual                                                                          
+Anger              79        0      0           0    0          0     0     1   
+Boredom             0       75      1           0    2          0     1     1   
+Empty               1        2     54           1    2          1     1     3   
+Enthusiasm          1        1      0          71    0          4     0     0   
+Fun                 0        1      0           0   78          1     0     0   
+Happiness           0        0      0           0    0         81     0     0   
+Hate                0        0      0           0    0          0    81     0   
+Love                0        2      0           0    1          0     0    77   
+Neutral             1        0      0           4    1          3     0     3   
+No Words Found      0        0      0           0    2          0     0     0   
+Relief              0        0      0           1    0          0     0     1   
+Sadness             0        0      0           0    0          0     0     0   
+Surprise            0        1      0           3    1          3     1     1   
+Worry               1        0      0           1    2          0     1     0   
+__all__            83       82     55          81   89         93    85    87   
+
+Predicted       Neutral  No Words Found  Relief  Sadness  Surprise  Worry  \
+Actual                                                                      
+Anger                 0               0       0        0         0      0   
+Boredom               0               0       1        0         0      0   
+Empty                 3               0       2        2         3      0   
+Enthusiasm            1               0       1        1         0      0   
+Fun                   0               0       0        0         0      0   
+Happiness             0               0       0        0         0      0   
+Hate                  0               0       0        0         0      0   
+Love                  0               0       0        0         0      0   
+Neutral              65               0       1        0         2      0   
+No Words Found        0               0       0        0         0      0   
+Relief                1               0      77        0         1      0   
+Sadness               0               0       0       80         0      1   
+Surprise              2               0       0        1        65      0   
+Worry                 0               0       1        2         1     71   
+__all__              72               0      83       86        72     72   
+
+Predicted       __all__  
+Actual                   
+Anger                80  
+Boredom              81  
+Empty                75  
+Enthusiasm           80  
+Fun                  80  
+Happiness            81  
+Hate                 81  
+Love                 80  
+Neutral              80  
+No Words Found        2  
+Relief               81  
+Sadness              81  
+Surprise             78  
+Worry                80  
+__all__            1040  
