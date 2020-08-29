@@ -4,6 +4,8 @@
     <list default="true" id="7c37f9ab-d6bc-4a38-ae91-4280811c6dce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/EmotionDetection-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EmotionDetection-master.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/welcome.py" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.py" afterDir="false" />
     </list>
@@ -50,11 +52,6 @@
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="JupyterTrust" id="edf43f3f-4941-4c84-974d-710b88401997" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="948" />
-    <option name="width" value="981" />
-    <option name="height" value="1044" />
-  </component>
   <component name="ProjectId" id="1glaOml142ITA9Te5h8Tr3TjcTq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -71,6 +68,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Osas\GeneralProjectsFolder\PythonProjects\EmotionDetection- ToImprove" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Osas\Documents\UH Course Documents\7COM1071-0105-2018 - Investigative Methods for Computer Science\The Project - Assignment 2 (60 marks)\EmotionDetection-master" />
     </key>
@@ -201,7 +201,7 @@
       <workItem from="1554881346947" duration="19664000" />
       <workItem from="1554969610918" duration="2908000" />
       <workItem from="1554980647819" duration="49000" />
-      <workItem from="1598691605322" duration="788000" />
+      <workItem from="1598691605322" duration="2164000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1554561675330</created>

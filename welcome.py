@@ -49,16 +49,16 @@ class WelcomeWindow(tk.Tk):
             frame.bind("<Motion>", self_event)
             # *******************************************************************
 
-        # show current frame
+        # show the start(Main Menu) frame
         self.show_frame(StartPage)
 
     # show_frame function. cont is the key
     def show_frame(self, cont):
-        frame =self.frames[cont]
+        frame = self.frames[cont]
         frame.tkraise()
 
 
-# ************************************** StartPage ***************************************************
+# ******************************************** StartPage(Main Menu) ****************************************************
 class StartPage(tk.Frame):
     def __init__(self, parent, controller):
 
